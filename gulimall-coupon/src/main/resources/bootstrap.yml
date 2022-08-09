@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gulimall_coupon
+    name: gulimall-coupon
   cloud:
     nacos:
       config:
