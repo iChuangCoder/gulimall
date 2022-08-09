@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.104:8848
+    gateway:
+      routes:
+        - id: query_route
+          uri: https://baidu.com
+          predicates:
+            - Query=red, gree.
+server:
+  port: 88
