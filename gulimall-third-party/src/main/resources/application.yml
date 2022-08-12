@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.104:8848
+server:
+  port: 30000
+
+oos:
+  accessKey: _Z9-phMig4Rs6tKEX-B3Y3LtB6PNLcwKqNkwKgHD
+  secretKey: MpA7EOjKPTeZQ6-xkAlcXbKC6uhS2LmMt1NpG8aw
+  bucket: ichuang-xyz-imags
+logging:
+  level:
+    org: debug

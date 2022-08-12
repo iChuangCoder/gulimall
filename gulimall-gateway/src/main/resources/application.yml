@@ -12,7 +12,17 @@ spring:
             allowedHeaders: "*" # 允许在请求中携带的头信息
             allowCredentials: true # 是否允许携带cookie
             maxAge: 360000 # 这次跨域检测的有效期
+
       routes:
+
+        - id: third-party_route
+          uri: lb://gulimall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+
         - id: product_route
           uri: lb://gulimall-product
           predicates:
