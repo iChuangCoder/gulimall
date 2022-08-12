@@ -16,7 +16,6 @@ import com.ichuang.common.utils.PageUtils;
 import com.ichuang.common.utils.R;
 
 
-
 /**
  * 品牌
  *
@@ -41,6 +40,12 @@ public class BrandController {
     }
 
 
+    @RequestMapping("/update/status")
+    public R updateStatus(@RequestBody BrandEntity brand){
+        brandService.lambdaUpdate().eq(BrandEntity::getBrandId,brand.getBrandId()).set(BrandEntity::getShowStatus,brand.getShowStatus()).update();
+        return R.ok();
+    }
+
     /**
      * 信息
      */
@@ -57,7 +62,6 @@ public class BrandController {
     @RequestMapping("/save")
     public R save(@RequestBody BrandEntity brand){
 		brandService.save(brand);
-
         return R.ok();
     }
 
